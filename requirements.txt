@@ -1,0 +1,9 @@
+#sphinx-gui3
+PyQtWebEngine
+PyQt5
+mistune
+sphinx
+rst2pdf
+docutils
+recommonmark
+setuptools
