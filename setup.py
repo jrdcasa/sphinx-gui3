@@ -6,6 +6,9 @@
  Configuration is given in pyproject.toml and setup.cfg
 """
 from setuptools import setup
+import sys
+import subprocess
+
 
 # Install packages from pip ==============================================================
 def install_with_pip(pack, vers=None):
