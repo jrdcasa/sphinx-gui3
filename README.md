@@ -22,7 +22,14 @@ source sandbox_sphinxgui3/bin/activate
 # Clone the github
 git clone https://github.com/jrdcasa/sphinx-gui3.git
 cd sphinx-gui3/
-
+python setup.py install
+# After this you can run the program as:
+sphinx-gui3 
+# Once the program has been installed, in oder to run it in any terminal
+# you need to activate the python envioronment and run the previous command
+# In this example:
+source <path_to_the_venv>/sandbox_sphinxgui3/bin/activate
+sphinx-gui3 
 ```
 
 
@@ -88,6 +95,9 @@ Code original repository: https://bitbucket.org/lukaszlaba/tebe
 PyPI package: https://pypi.python.org/pypi/tebe
 
 Contact: Lukasz Laba <lukaszlaba@gmail.com>
+
+More information on sphinx-gui3
+-------------------------------
 
 Code repository (sphinx-gui3): https://github.com/jrdcasa/sphinx-gui3.git
 
