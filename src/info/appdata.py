@@ -24,7 +24,8 @@ _appname = 'sphinx-gui3'
 _version = '0.2.3'
 _about = '''
 -------------Licence-------------
-Tebe is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License 
+Sphinx-gui3 (aka Tebe) is free software; you can redistribute it and/or modify it under the terms of the 
+GNU General Public License 
 as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
 Tebe is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
@@ -38,9 +39,15 @@ Copyright (C) 2017-2020 Lukasz Laba (e-mail : lukaszlaba@gmail.com)
 -------------Project website-------------
 https://tebe.readthedocs.io
 
--------------Source code-------------
+-------------Sphinx-gui3 Source code-------------
+https://github.com/jrdcasa/sphinx-gui3
+
+-------------Original Source code-------------
 https://bitbucket.org/lukaszlaba/tebe
 
--------------Contact-------------
+-------------Sphinx-gui3 Contact-------------
+jrdcasa@gmail.com
+
+-------------Tebe Contact-------------
 lukaszlaba@gmail.com
 '''

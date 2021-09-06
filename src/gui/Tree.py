@@ -27,6 +27,7 @@ from PyQt5.QtCore import pyqtSlot
 
 
 class Tree(QtWidgets.QTreeView):
+
 	def __init__(self, parent=None):
 		super(Tree, self).__init__(parent)
 		# ---
@@ -43,7 +44,7 @@ class Tree(QtWidgets.QTreeView):
 		# ---Link the tree to a model
 		model = QtWidgets.QFileSystemModel()
 		model.setRootPath(self.content.source_dir_path)
-		model.setNameFilters(["*.md", "*.rst"])
+		model.setNameFilters(["*.md", "*.rst", "*.py"])
 		self.setModel(model)
 		# ---Set the tree's index to the root of the model
 		indexRoot = model.index(model.rootPath())
@@ -57,6 +58,7 @@ class Tree(QtWidgets.QTreeView):
 
 	@pyqtSlot(QtCore.QModelIndex)
 	def on_treeview_clicked(self, index):
+
 		indexItem = self.model().index(index.row(), 0, index.parent())
 		# ---
 		# cJ fileName = str(self.model().fileName(indexItem))

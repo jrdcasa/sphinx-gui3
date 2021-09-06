@@ -54,9 +54,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.SphinxIndexFilePreview = Preview()
         self.HelpPage = Preview()
         # ---
-        self.tab_widget.addTab(self.CurrentFilePreview, "current file preview")
-        self.tab_widget.addTab(self.SphinxCurentFilePreview, "sphinx current file preview")
-        self.tab_widget.addTab(self.SphinxIndexFilePreview, "sphinx index file preview")
+        self.tab_widget.addTab(self.CurrentFilePreview, "RST current file preview")
+        self.tab_widget.addTab(self.SphinxCurentFilePreview, "SPHINX current file preview")
+        self.tab_widget.addTab(self.SphinxIndexFilePreview, "SPHINX index file preview")
         self.tab_widget.addTab(self.HelpPage, "help")
         # ---
         splitter = QtWidgets.QSplitter(QtCore.Qt.Horizontal)
@@ -81,6 +81,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.printer = QtPrintSupport.QPrinter()
         
     def setupActions(self):
+
         self.openAction = QtWidgets.QAction(QtGui.QIcon(abspath("icons/open_file.png")), "Open file", self)
         self.openAction.setShortcut("Ctrl+O")
         self.openAction.setStatusTip("It opens markup file")
@@ -281,12 +282,19 @@ class MainWindow(QtWidgets.QMainWindow):
             self.saveFileAs()
 
     def saveFileAs(self):
+
         # ---
-        directory = Document.file_path.replace(Document.file_name, 'Copy_of_' + Document.file_name)
-        if not directory : directory = ''
-        file_path = QtWidgets.QFileDialog.getSaveFileName(  caption = 'Save markup file as',
-                                                        directory = directory,
-                                                        filter = "Markup File (*.rst *.md)")[0]
+        # cJ
+        try:
+            directory = Document.file_path.replace(Document.file_name, 'Copy_of_' + Document.file_name)
+            if not directory : directory = ''
+            file_path = QtWidgets.QFileDialog.getSaveFileName(caption='Save markup file as',
+                                                              directory=directory,
+                                                              filter="Markup File (*.rst *.md)")[0]
+        except AttributeError:
+            file_path = None
+            pass
+
         # ---
         if file_path:
             text_in_editor = self.Editor.toPlainText()
@@ -416,7 +424,6 @@ class MainWindow(QtWidgets.QMainWindow):
         else:
             QtWidgets.QMessageBox.information(None, 'Info', 'No data to sphinx build - try to open some sphinx content')        
 
-    
     def build_this_PDF(self):
         if Document.is_rst_file():
             # ---asking pdf filename

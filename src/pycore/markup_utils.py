@@ -59,7 +59,7 @@ def md_to_html(input_string):
 
 # --------------------------------------------------------------
 def is_markup_file(path):
-    if ('.md' in path) or ('.rst' in path):
+    if ('.md' in path) or ('.rst' in path) or ('.py' in path):
         return True
     else:
         return False

@@ -104,10 +104,17 @@ class SphinxBuilder:
                                          '-b', 'html',
                                          scrdir, outdir])
             else:
-                proc = subprocess.Popen([sphinxbuild_path,
-                                         '-b', 'html',
-                                         '-c', self.confdir,
-                                         scrdir, outdir])
+                if self.theme == 'sphinx_rtd_theme':
+                    proc = subprocess.Popen(['cp', self.confdir+"/conf.py", scrdir])
+                    proc.wait()
+                    proc=subprocess.Popen([sphinxbuild_path,
+                                           '-b', 'html',
+                                           scrdir, outdir])
+                else:
+                    proc = subprocess.Popen([sphinxbuild_path,
+                                             '-b', 'html',
+                                             '-c', self.confdir,
+                                             scrdir, outdir])
             proc.wait()
             # ---
             self.__html_is_builded_for = self.source_dir_path

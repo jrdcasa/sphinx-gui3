@@ -84,7 +84,9 @@ class Content:
 
     def create_index_file(self):
         index_file_content = create_index_content(self.get_markup_filenames_list())
-        index_file_path = os.path.join(self.source_dir_path, 'index.rst')
-        file = codecs.open(index_file_path, "w",  'utf-8')
-        file.write(index_file_content)
-        file.close()
+        # cJ
+        if self.source_dir_path is not None:
+            index_file_path = os.path.join(self.source_dir_path, 'index.rst')
+            file = codecs.open(index_file_path, "w",  'utf-8')
+            file.write(index_file_content)
+            file.close()

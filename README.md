@@ -44,6 +44,10 @@ The **sphinx-gui3** (aka Tebe) 0.2.3 (J. Ramos)
 - Some changes along the py files to fulfill with PEP8
 - Use CLI to run the program.
 - Change the name Tebe to sphinx-gui3.
+- Add sphinx_rtd_theme
+- Allow the edition of python files to manually configure config.py
+- Correct error in the fucntion create_index_file in Content.py. The application closed with errors with no index.rst file is loaded.
+- Correct error in the fucntion saveFileAs in sphinx_gui3.py. The application closed with errors with noo files loaded in the Tree.
 
 Tebe 0.2.2
 
