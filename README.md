@@ -11,6 +11,9 @@ The original Tebe package can be found in https://bitbucket.org/lukaszlaba/tebe/
 
 I decided to make some minor changes to adapt the project to my needs.
 
+How to install
+--------------
+
 The changes in the package makes the installation even easier:
    
 ```bash
@@ -63,25 +66,17 @@ Requirements
 1. recommonmark
 1. mistune
 
-How to install
---------------
-Tebe is available through PyPI and can be install with pip command by typing::
-
-   pip install tebe
-
-Please note that the requirements listed above must be installed separately.
-
-To run tebe run the ``Tebe.py`` file from the installed package directory.
 
 Licence
 -------
-Tebe is free software;
+Sphinx-gui3 (aka Tebe) is free software;
 you can redistribute it and/or modify it under the terms of the **GNU General Public License**
 as published by the Free Software Foundation;
 either version 2 of the License,
 or (at your option) any later version.
 
 Copyright (C) 2017-2020 Lukasz Laba <lukaszlaba@gmail.com>
+
 
 Contributions
 -------------
