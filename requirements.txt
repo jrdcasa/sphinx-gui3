@@ -7,3 +7,6 @@ rst2pdf
 docutils
 recommonmark
 setuptools
+#for sphinx_rtd_theme
+mock
+sphinx_rtd_theme

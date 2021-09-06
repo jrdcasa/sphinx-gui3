@@ -93,41 +93,6 @@ class SphinxBuilder:
         else:
             return None
 
-    # -----------------------------------------------------
-
-    '''
-    def _build(self, buildername='html'):
-        if self.Content.conf_file_path:
-            confdir = self.source_dir_path
-        else:
-            confdir = self.confdir
-        #---
-        if buildername == 'html':
-            outdir = self.tmp_html_dir
-            doctreedir = self.tmp_html_dir
-        if buildername == 'pdf':
-            outdir = self.tmp_pdf_dir
-            doctreedir = self.tmp_pdf_dir
-        #---
-        sphinx_app = Sphinx(    srcdir = self.source_dir_path, 
-                                confdir = confdir,
-                                outdir = outdir, 
-                                doctreedir = self.tmp_html_dir, 
-                                buildername = buildername   )
-        #---
-        sphinx_app.build()  
-
-    def build_html(self):
-        if self.source_dir_path:
-            self._build('html')
-            print 'build_html done'
-
-    def build_pdf(self):
-        if self.source_dir_path:
-            self._build('pdf')
-            print 'build_pdf done'
-    '''
-
     def build_html(self):
         if self.source_dir_path:
             # ---
