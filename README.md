@@ -53,14 +53,15 @@ Tebe 0.1
 
 Requirements
 ------------
+
 1. Python 3
-#. pyqt5
-#. pyqtwebengine 
-#. sphinx
-#. rst2pdf
-#. docutils
-#. recommonmark
-#. mistune
+1. pyqt5
+1. pyqtwebengine 
+1. sphinx
+1. rst2pdf
+1. docutils
+1. recommonmark
+1. mistune
 
 How to install
 --------------
