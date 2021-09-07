@@ -71,6 +71,8 @@ Requirements
 1. docutils
 1. recommonmark
 1. mistune
+1. mock
+1. sphinx_rtd_theme
 
 
 Licence
