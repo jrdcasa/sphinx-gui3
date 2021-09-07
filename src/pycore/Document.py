@@ -37,8 +37,8 @@ class Document:
     
     @property
     def file_name(self):
-        print(self.file_path)
-        print(os.path.basename(self.file_path))
+        # print(self.file_path)
+        # print(os.path.basename(self.file_path))
         return os.path.basename(self.file_path) 
 
     def has_data(self):
@@ -49,28 +49,33 @@ class Document:
     
     # -----------------------------------------------------
     def set_new_text_content(self, text):
+
         # self.text = unicode(text)
         self.text = text
         
     def file_open(self, file_path):
+
         file = codecs.open(file_path, 'r', 'utf-8')
         self.text = file.read() 
         file.close()
         self.file_path = file_path
 
     def file_save(self):
+
         file = codecs.open(self.file_path, "wb", 'utf-8')
         file.write(self.text)
         file.close()
         self.file_open(self.file_path)
 
     def file_save_as(self, file_path):
+
         file = codecs.open(file_path, "wb", 'utf-8')
         file.write(self.text)
         file.close()
         self.file_open(file_path)
         
     def file_new(self, file_path):
+
         file = codecs.open(file_path, "w",  'utf-8')
         file.write('It is yours new empty markup file..')
         file.close()

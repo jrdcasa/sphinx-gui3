@@ -20,9 +20,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 --------------------------------------------------------------------------
 """
 
-_appname = 'sphinx-gui3'
-_version = '0.2.3'
-_about = '''
+appname = 'sphinx-gui3'
+version = '0.2.3'
+about = '''
 -------------Licence-------------
 Sphinx-gui3 (aka Tebe) is free software; you can redistribute it and/or modify it under the terms of the 
 GNU General Public License 

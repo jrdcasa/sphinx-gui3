@@ -48,6 +48,8 @@ The **sphinx-gui3** (aka Tebe) 0.2.3 (J. Ramos)
 - Allow the edition of python files to manually configure config.py
 - Correct error in the function create_index_file in Content.py. The application closed with errors with no index.rst file is loaded.
 - Correct error in the function saveFileAs in sphinx_gui3.py. The application closed with errors with noo files loaded in the Tree.
+- New folder in toolbar and menus
+- Add contextual menu to the Tree window
 
 Tebe 0.2.2
 
