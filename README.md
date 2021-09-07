@@ -50,6 +50,7 @@ The **sphinx-gui3** (aka Tebe) 0.2.3 (J. Ramos)
 - Correct error in the function saveFileAs in sphinx_gui3.py. The application closed with errors with noo files loaded in the Tree.
 - New folder in toolbar and menus
 - Add contextual menu to the Tree window
+- Relative can be used for rst files. In the previous version if the rst file is in a different directory to the index.rst file, the Sphinx view is not generated.
 
 Tebe 0.2.2
 

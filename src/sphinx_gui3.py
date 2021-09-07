@@ -23,6 +23,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 import sys
 import os
 import time
+from pathlib import Path
 
 from PyQt5 import QtWidgets, QtGui, QtCore, QtPrintSupport
 
@@ -397,8 +398,33 @@ class MainWindow(QtWidgets.QMainWindow):
             # self.SphinxCurentFilePreview.scroll_fix()
             index_html_path = SphinxBuilder.html_path_for('index.html')
             self.SphinxIndexFilePreview.show_html(index_html_path)
-            # ---
-            this_file_html_path = SphinxBuilder.html_path_for(Document.file_name)
+
+            # cJ--- This operation is needed when rst files are not in the same directory that index.rst
+            if Document.file_path is not None:
+                canonical_dir_current_rst = os.path.split(Document.file_path)[0]
+            else:
+                canonical_dir_current_rst = "/"
+
+            if Content.index_file_path is not None:
+                canonical_dir_index_rst = os.path.split(Content.index_file_path)[0]
+            else:
+                canonical_dir_index_rst = "/"
+            try:
+                extra = str(Path(canonical_dir_current_rst).relative_to(canonical_dir_index_rst))
+            except ValueError:
+                extra = str(Path(canonical_dir_index_rst).relative_to(canonical_dir_current_rst))
+
+
+            print(canonical_dir_index_rst, canonical_dir_current_rst, extra)
+            print("======================")
+
+            # --
+            if extra == ".":
+                relative_path_html = Document.file_name
+            else:
+                relative_path_html = os.path.join(extra,Document.file_name)
+            # this_file_html_path = SphinxBuilder.html_path_for(Document.file_name)
+            this_file_html_path = SphinxBuilder.html_path_for(relative_path_html)
             self.SphinxCurentFilePreview.show_html(this_file_html_path)
         else:
             self.SphinxIndexFilePreview.setHtml('(html not built yet)')
@@ -499,13 +525,15 @@ class MainWindow(QtWidgets.QMainWindow):
             if reply == QtWidgets.QMessageBox.Yes:
                 Content.create_index_file()
                 self.show_status_info('Index file updated')
-        else :
+        else:
             reply = QtWidgets.QMessageBox.question(None, "Index file will be created!",
                                                    'There is no index file in current Sphinx project '
                                                    'an it will be created now.',
                                                    QtWidgets.QMessageBox.Cancel | QtWidgets.QMessageBox.Ok)
             if reply == QtWidgets.QMessageBox.Ok:
                 Content.create_index_file()
+                # cJ
+                Document.file_open(Content.index_file_path)
                 self.show_status_info('Index file created')
 
     # ---------------------------------
@@ -617,6 +645,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if window.synchronizeScrollsSwitch.isChecked():
             self.CurrentFilePreview.scroll_to_relposition(window.Editor.get_scroll_relposition())
             self.SphinxCurentFilePreview.scroll_to_relposition(window.Editor.get_scroll_relposition())
+
 
 def main_app():
 
