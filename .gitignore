@@ -1,7 +1,6 @@
 *.pyc
 MANIFEST
 dist
-.idea/
 build/
 *.egg-info/
 nohup.out

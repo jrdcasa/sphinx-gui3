@@ -34,6 +34,9 @@ class Content:
 
     @property
     def project_name(self):
+        print("==========================================")
+        print(self.source_dir_path)
+        print("==========================================")
         return os.path.basename(self.source_dir_path)
 
     def set_source_dir(self, source_dir_path):

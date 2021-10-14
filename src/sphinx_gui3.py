@@ -269,8 +269,8 @@ class MainWindow(QtWidgets.QMainWindow):
             file_path = str(file_path)
             # ---
             Document.file_open(file_path)
-            #cJ if is_from_new_project:
-            #cJ     Content.set_source_dir(os.path.dirname(file_path))
+            if is_from_new_project:
+                Content.set_source_dir(os.path.dirname(file_path))
             # ---
             self.reload_data()
 
